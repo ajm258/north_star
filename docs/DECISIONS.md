@@ -82,3 +82,56 @@ The following require explicit decisions before production use:
 11. Authentication/deployment design.
 12. Exact report delivery times.
 13. Target allocation semantics, if enabled.
+
+## Sprint 0 accepted decisions
+
+### ADR-008 — PostgreSQL is the authoritative structured store
+
+Status: Accepted
+
+### ADR-009 — Initial scope is US/NSE/BSE listed equities only
+
+Status: Accepted
+
+### ADR-010 — Security identity and listing identity are separate
+
+Status: Accepted
+
+Tickers are time-bound listing attributes, not canonical identities.
+
+### ADR-011 — FIFO is used for internal investment P&L
+
+Status: Accepted
+
+The application is not a tax engine.
+
+### ADR-012 — Cash, fees, taxes, dividends, and FX are explicit
+
+Status: Accepted
+
+Cash is part of portfolio value. Buy costs enter lot cost basis, sell costs reduce proceeds, and dividends retain gross/tax/net values.
+
+### ADR-013 — Opening positions are accounting boundaries
+
+Status: Accepted
+
+They create opening lots with explicit unknown acquisition dates when needed and do not create historical BUY transactions.
+
+### ADR-014 — Raw and adjusted prices have distinct semantics
+
+Status: Accepted
+
+### ADR-015 — Imports require explicit reconciliation confirmation
+
+Status: Accepted
+
+### ADR-016 — Jobs are idempotent and freshness-aware
+
+Status: Accepted
+
+## Deferred decisions
+
+- Initial provider stack pending empirical US/NSE/BSE tests and licence review.
+- Portfolio TWR/XIRR methodology.
+- Benchmarks and target allocations.
+- Economic treatment rules for bonus issues, rights issues, mergers, and spin-offs.

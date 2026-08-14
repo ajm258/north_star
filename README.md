@@ -36,3 +36,7 @@ It does not attempt to predict short-term prices or issue binary Buy/Sell instru
 Deterministic calculations and data processing come first. The LLM is used for interpretation, explanation, synthesis, and contextual analysis—not arithmetic or authoritative investment decisions.
 
 See `AGENTS.md` for repository instructions and `docs/` for the detailed specification.
+
+## Development foundation
+
+The initial implementation uses Python, FastAPI, PostgreSQL, Alembic, Docker Compose, and fixed-precision decimal accounting. Copy `.env.example` to `.env`, set a non-default `ADMIN_PASSWORD`, then run `docker compose up --build` in a Docker-enabled development environment. Run `pytest` and `ruff check .` before changes are accepted.

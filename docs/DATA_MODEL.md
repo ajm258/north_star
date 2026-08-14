@@ -1,5 +1,13 @@
 # Data Model
 
+## Sprint 0 schema contract
+
+The PostgreSQL migration introduces `portfolios`, `portfolio_accounts`, `securities`, `security_listings`, `transactions`, `opening_positions`, `opening_cash_balances`, `lots`, `lot_allocations`, `cash_ledger`, `corporate_actions`, `imports`, `import_rows`, `broker_mappings`, `holdings`, historical market/FX/snapshot models, intelligence/report models, and `job_runs`.
+
+Financial amounts and quantities use `NUMERIC(28, 10)`. IDs are immutable UUID-shaped strings. Timestamps are timezone-aware. The exact implemented model is in `portfolio_intelligence/domain/models.py`; this document remains the conceptual reference.
+
+`security_listings` holds ticker, exchange, MIC, currency, and active dates. A ticker is never used as a portfolio-accounting foreign key. `lots` may originate from a transaction or an explicit opening position; a sale records allocations to consumed lots.
+
 This is the initial conceptual model. Exact schema and database technology can be decided during Sprint 0.
 
 ## portfolio_accounts

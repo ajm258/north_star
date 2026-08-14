@@ -4,6 +4,8 @@
 
 Use a modular monolith.
 
+Sprint 0 uses Python, FastAPI, and PostgreSQL. The initial application has modules for configuration/security, API/UI, imports, ledger/accounting, providers, reconstruction, analytics, signals, LLM interpretation, reports, jobs, and persistence. Only the foundation, accounting/import, and job boundaries are implemented in Sprint 0/1.
+
 Do not split the application into many services until there is a demonstrated operational reason.
 
 Recommended conceptual layers:
@@ -54,6 +56,8 @@ Transactions are the source of truth for portfolio accounting when available.
 Holdings are derived state.
 
 Historical snapshots are persisted for efficient reporting and auditability, but must not replace the underlying transaction history.
+
+Security identity is separate from exchange listing identity. Raw valuation prices are separate from adjusted analytical series. Cash, opening-position boundaries, and corporate actions are explicit persisted concepts.
 
 ## 4. Provider abstraction
 

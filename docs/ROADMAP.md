@@ -20,6 +20,8 @@ Acceptance:
 - tests run
 - migration workflow works
 
+Approved expansion: Python/FastAPI/PostgreSQL structure, authenticated API foundation, Docker/Compose, core ledger/import/job models, accounting documentation, and golden fixtures.
+
 ---
 
 ## Sprint 1 — Portfolio ingestion
@@ -38,6 +40,8 @@ Acceptance:
 - show detected additions/increases/reductions/removals
 - confirm and persist
 - reject invalid input safely
+
+Approved implementation scope: staged CSVs, hashing, type detection, generic broker mappings, validation, listing matching/resolution, reconciliation preview, explicit confirmation, opening positions, transaction history, import audit, constrained reversals, and mobile-responsive authenticated upload UI.
 
 ---
 
